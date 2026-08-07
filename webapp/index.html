@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#125940" />
+<title>Biogenique</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<style>
+  :root{
+    --bg:#f4f7f5; --card:#ffffff; --ink:#12251d; --sub:#5b6b62;
+    --brand:#1c7a5a; --brand-dark:#125940; --line:#e3e9e5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+  header{position:sticky;top:0;z-index:10;background:var(--brand-dark);color:#fff;padding:14px 16px calc(14px + env(safe-area-inset-top,0px));padding-top:calc(14px + env(safe-area-inset-top,0px))}
+  .h-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.2px}
+  .brand svg{flex:0 0 auto}
+  .cart-btn{position:relative;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:20px;font-size:14px;font-weight:600}
+  .badge{position:absolute;top:-6px;right:-6px;background:#e0663e;color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+  .search{margin-top:12px}
+  .search input{width:100%;padding:11px 14px;border-radius:12px;border:none;font-size:15px;background:#fff;color:#12251d}
+  .chips{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;padding:6px 13px;border-radius:16px;background:rgba(255,255,255,.14);color:#fff;font-size:13px;white-space:nowrap;border:1px solid rgba(255,255,255,.2)}
+  .chip.active{background:#fff;color:var(--brand-dark);font-weight:700}
+  main{padding:14px 12px 90px}
+  .notice{background:#fff8e6;border:1px solid #f2dfa3;color:#6b5a1a;font-size:12.5px;padding:10px 12px;border-radius:10px;margin-bottom:12px;line-height:1.4}
+  .notice a{color:var(--brand-dark)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:920px){.grid{grid-template-columns:repeat(4,1fr)}}
+  .card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+  .card .imgwrap{aspect-ratio:1/1;background:#eef2ef;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .card img{width:100%;height:100%;object-fit:cover}
+  .card .ph{width:60%;height:60%;opacity:.35}
+  .card .body{padding:10px 10px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .card .name{font-size:13.5px;font-weight:600;line-height:1.25;min-height:34px}
+  .card .price{font-size:15px;font-weight:800;color:var(--brand-dark)}
+  .card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:6px}
+  .addbtn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:7px 10px;font-size:12.5px;font-weight:700}
+  .qty{display:flex;align-items:center;gap:8px}
+  .qty button{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);background:#fff;font-size:15px;line-height:1}
+  .empty{text-align:center;color:var(--sub);padding:40px 10px}
+  .sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:20}
+  .sheet-bg.open{display:block}
+  .sheet{position:fixed;left:0;right:0;bottom:0;background:#fff;border-radius:18px 18px 0 0;max-height:80vh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .25s ease;z-index:21}
+  .sheet.open{transform:translateY(0)}
+  .sheet-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .sheet-head h2{margin:0;font-size:17px}
+  .sheet-head button{background:none;border:none;font-size:22px;color:var(--sub)}
+  .sheet-items{overflow-y:auto;padding:8px 16px}
+  .cart-row{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+  .cart-row .thumb{width:48px;height:48px;border-radius:8px;background:#eef2ef;overflow:hidden;flex:0 0 auto}
+  .cart-row .thumb img{width:100%;height:100%;object-fit:cover}
+  .cart-row .info{flex:1;min-width:0}
+  .cart-row .info .n{font-size:13.5px;font-weight:600}
+  .cart-row .info .p{font-size:12.5px;color:var(--sub)}
+  .sheet-foot{padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+  .total-row{display:flex;justify-content:space-between;font-weight:700;margin-bottom:10px;font-size:15px}
+  .checkout-btn{width:100%;background:var(--brand);color:#fff;border:none;padding:13px;border-radius:12px;font-size:15px;font-weight:700}
+  .install-banner{position:fixed;left:12px;right:12px;bottom:12px;background:var(--brand-dark);color:#fff;padding:12px 14px;border-radius:14px;display:none;align-items:center;justify-content:space-between;gap:10px;z-index:15;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+  .install-banner.show{display:flex}
+  .install-banner button{background:#fff;color:var(--brand-dark);border:none;border-radius:9px;padding:8px 12px;font-weight:700;font-size:13px}
+  .install-banner .txt{font-size:12.5px;line-height:1.3}
+  .install-banner .close{background:transparent;color:#cfe3da;font-size:16px;padding:4px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-row">
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 108 108"><path fill="#fff" d="M54,10 C72,10 86,26 86,45 C86,66 72,85 54,98 C36,85 22,66 22,45 C22,26 36,10 54,10 Z"/><path fill="#1c7a5a" d="M54,20 C68,20 78,32 78,46 C78,62 68,77 54,88 C40,77 30,62 30,46 C30,32 40,20 54,20 Z"/></svg>
+      Biogenique
+    </div>
+    <button class="cart-btn" id="cartBtn">Cart<span class="badge" id="cartBadge" style="display:none">0</span></button>
+  </div>
+  <div class="search">
+    <input id="searchInput" placeholder="Search Biogenique products…" />
+  </div>
+  <div class="chips" id="chipRow"></div>
+</header>
+
+<main>
+  <div class="notice">
+    Catalog and prices sourced directly from Biogenique's official product list. Checkout completes securely on <a href="https://www.biogenique.com" target="_blank" rel="noopener">biogenique.com</a> — this app does not process payments itself.
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="emptyState" style="display:none">No products match your search.</div>
+</main>
+
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="cartSheet">
+  <div class="sheet-head">
+    <h2>Your Cart</h2>
+    <button id="closeSheet">&times;</button>
+  </div>
+  <div class="sheet-items" id="cartItems"></div>
+  <div class="sheet-foot">
+    <div class="total-row"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn" id="checkoutBtn">Checkout on Biogenique.com</button>
+  </div>
+</div>
+
+<div class="install-banner" id="installBanner">
+  <div class="txt">Install Biogenique as an app on your phone for quick access.</div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button id="installBtn">Install</button>
+    <button class="close" id="installClose">&times;</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
