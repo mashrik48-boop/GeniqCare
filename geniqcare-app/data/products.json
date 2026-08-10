@@ -1,0 +1,614 @@
+[
+  {
+    "sku": "100-2500-01",
+    "name": "Vitamin C",
+    "price": 25.6,
+    "image": null
+  },
+  {
+    "sku": "100-2500-02",
+    "name": "Zinc 10MG",
+    "price": 27.8,
+    "image": null
+  },
+  {
+    "sku": "100-2500-02-1",
+    "name": "Zinc 10MG",
+    "price": 21.4,
+    "image": null
+  },
+  {
+    "sku": "100-2500-03",
+    "name": "Vitamin D3",
+    "price": 24.2,
+    "image": null
+  },
+  {
+    "sku": "100-2500-04",
+    "name": "Vitamin E",
+    "price": 29.9,
+    "image": null
+  },
+  {
+    "sku": "100-2500-04-1",
+    "name": "Vitamin E",
+    "price": 18.9,
+    "image": null
+  },
+  {
+    "sku": "100-2500-07",
+    "name": "Vitamin A",
+    "price": 24.6,
+    "image": null
+  },
+  {
+    "sku": "100-2500-07-1",
+    "name": "Vitamin A",
+    "price": 36.6,
+    "image": null
+  },
+  {
+    "sku": "100-2500-09",
+    "name": "Vitamin B6 100MG",
+    "price": 32.3,
+    "image": null
+  },
+  {
+    "sku": "100-2500-09-1",
+    "name": "Vitamin B6 100MG",
+    "price": 44.3,
+    "image": null
+  },
+  {
+    "sku": "100-2500-10",
+    "name": "Vitamin B12",
+    "price": 28.6,
+    "image": null
+  },
+  {
+    "sku": "100-2500-10-1",
+    "name": "Vitamin B12",
+    "price": 22.6,
+    "image": null
+  },
+  {
+    "sku": "100-2500-12",
+    "name": "CoenzymeQ10 + Vitamin E",
+    "price": 44.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9MQX3WV.MAIN_1800x1800.jpg?v=1778338400"
+  },
+  {
+    "sku": "100-2500-13",
+    "name": "Ginkgo biloba",
+    "price": 32.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9MZ7SKN.MAIN_1800x1800.jpg?v=1778338571"
+  },
+  {
+    "sku": "100-2500-16",
+    "name": "Creatine",
+    "price": 45.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0CD4XZPSJ.MAIN_1800x1800.jpg?v=1778339002"
+  },
+  {
+    "sku": "100-2500-17",
+    "name": "Formula for joint pain",
+    "price": 36.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9N3ZMLR.MAIN_1800x1800.jpg?v=1778339479"
+  },
+  {
+    "sku": "100-2500-20",
+    "name": "L-carnitine + green tea",
+    "price": 29.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0C95FLMQQ.MAIN_1800x1800.jpg?v=1778339693"
+  },
+  {
+    "sku": "100-2500-30",
+    "name": "Mood Enhancer Male",
+    "price": 38.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9N4T1JZ.MAIN_1800x1800.jpg?v=1778339985"
+  },
+  {
+    "sku": "100-2500-32",
+    "name": "Turmeric",
+    "price": 32.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0C9RKDTHF.MAIN_1800x1800.jpg?v=1775738163"
+  },
+  {
+    "sku": "100-2500-33",
+    "name": "Vitamin K2 + D3",
+    "price": 33.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0C9R87LR8.MAIN_1800x1800.jpg?v=1778340370"
+  },
+  {
+    "sku": "100-2500-218",
+    "name": "Hawthorn",
+    "price": 27.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PBXY5R.MAIN_1800x1800.jpg?v=1778407448"
+  },
+  {
+    "sku": "100-2500-219",
+    "name": "Holy Basil",
+    "price": 31.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PDXV2D.MAIN_1800x1800.jpg?v=1778411037"
+  },
+  {
+    "sku": "100-2500-220",
+    "name": "Milk Thistle",
+    "price": 29.7,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PCV85Y.MAIN_1800x1800.jpg?v=1778411214"
+  },
+  {
+    "sku": "100-2500-221",
+    "name": "Saw Palmetto",
+    "price": 34.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PHJ76M.MAIN_1800x1800.jpg?v=1778411543"
+  },
+  {
+    "sku": "100-2500-222",
+    "name": "Melatonin",
+    "price": 22.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PJKD7K.MAIN_1800x1800.jpg?v=1778411765"
+  },
+  {
+    "sku": "100-2500-223",
+    "name": "5-HTP",
+    "price": 27.8,
+    "image": null
+  },
+  {
+    "sku": "100-2500-224",
+    "name": "Alpha lipoic acid",
+    "price": 34.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PJMDV3.MAIN_1800x1800.jpg?v=1778412073"
+  },
+  {
+    "sku": "100-2500-225",
+    "name": "Maca",
+    "price": 31.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PHPDW4.MAIN_1800x1800.jpg?v=1778412299"
+  },
+  {
+    "sku": "100-2500-226",
+    "name": "Reishi",
+    "price": 32.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PJSVDR.MAIN_1800x1800.jpg?v=1778412454"
+  },
+  {
+    "sku": "100-2500-227",
+    "name": "Ashwagandha",
+    "price": 25.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PJJZW6.MAIN_1800x1800.jpg?v=1778412600"
+  },
+  {
+    "sku": "100-2500-228",
+    "name": "Rhodiola",
+    "price": 34.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PJXJZV.MAIN_1800x1800.jpg?v=1778412761"
+  },
+  {
+    "sku": "100-2500-229",
+    "name": "Siberian Ginseng",
+    "price": 27.3,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PKCQ3G.MAIN_1800x1800.jpg?v=1778412918"
+  },
+  {
+    "sku": "100-2500-230",
+    "name": "Bacopa",
+    "price": 32.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PH9RX6.MAIN_1800x1800.jpg?v=1778413053"
+  },
+  {
+    "sku": "100-2500-231",
+    "name": "Collagen",
+    "price": 38.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PHZG5N.MAIN_1800x1800.jpg?v=1778413240"
+  },
+  {
+    "sku": "100-2500-232",
+    "name": "Green tea Extract",
+    "price": 28.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PNJD5D.MAIN_1800x1800.jpg?v=1778413379"
+  },
+  {
+    "sku": "100-2500-233",
+    "name": "Cordyceps",
+    "price": 35.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PPRHXJ.MAIN_360x.jpg?v=1778413540"
+  },
+  {
+    "sku": "100-2500-234",
+    "name": "Moringa",
+    "price": 27.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PPFWRH.MAIN_1800x1800.jpg?v=1778413725"
+  },
+  {
+    "sku": "100-2500-235",
+    "name": "Multivitamin",
+    "price": 28.1,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PNG52F.MAIN_1800x1800.jpg?v=1778414566"
+  },
+  {
+    "sku": "100-2500-236",
+    "name": "Multivitamin for women",
+    "price": 26.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PMKMVR.MAIN_1800x1800.jpg?v=1778414778"
+  },
+  {
+    "sku": "100-2500-237",
+    "name": "Multivitamin for kids",
+    "price": 39.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/Gummy1-OUT_1800x1800.jpg?v=1778415013"
+  },
+  {
+    "sku": "100-2500-238",
+    "name": "Krill Oil",
+    "price": 38.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PRGKT5.MAIN_1800x1800.jpg?v=1778415104"
+  },
+  {
+    "sku": "100-2500-239",
+    "name": "Biotin",
+    "price": 21.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PS7NRG.MAIN_1800x1800.jpg?v=1778415242"
+  },
+  {
+    "sku": "100-2500-240",
+    "name": "B-Complex",
+    "price": 32.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PRXGCL.MAIN_1800x1800.jpg?v=1778415422"
+  },
+  {
+    "sku": "100-2500-241",
+    "name": "Magnesium Citrate",
+    "price": 26.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PSQ252.MAIN_1800x1800.jpg?v=1778415562"
+  },
+  {
+    "sku": "100-2500-242",
+    "name": "Magnesium Bisglycinate",
+    "price": 26.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PTHPZL.MAIN_1800x1800.jpg?v=1778415693"
+  },
+  {
+    "sku": "100-2500-243",
+    "name": "Potassium Chloride",
+    "price": 28.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PRRJJM.MAIN_1800x1800.jpg?v=1778415839"
+  },
+  {
+    "sku": "100-2500-244",
+    "name": "Chromium Picolinate",
+    "price": 22.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PRWKDS.MAIN_1800x1800.jpg?v=1778416318"
+  },
+  {
+    "sku": "100-2500-245",
+    "name": "L-Arginine",
+    "price": 32.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PT5HF2.MAIN_1800x1800.jpg?v=1778416461"
+  },
+  {
+    "sku": "100-2500-246",
+    "name": "L-Glutamine",
+    "price": 32.1,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PSPWKD.MAIN_1800x1800.jpg?v=1778416591"
+  },
+  {
+    "sku": "100-2500-247",
+    "name": "L-Taurine",
+    "price": 31.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PTP6XH.MAIN_360x.jpg?v=1778416822"
+  },
+  {
+    "sku": "100-2500-248",
+    "name": "BCAA",
+    "price": 42.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PT26S9.MAIN_1800x1800.jpg?v=1778416933"
+  },
+  {
+    "sku": "100-2500-249",
+    "name": "Whey Protein Isolate",
+    "price": 58.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PTGV7H.MAIN_360x.jpg?v=1778417218"
+  },
+  {
+    "sku": "100-2500-250",
+    "name": "CLA 1000",
+    "price": 35.1,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PTR85Y.MAIN_1800x1800.jpg?v=1778417402"
+  },
+  {
+    "sku": "100-2500-251",
+    "name": "Niacin",
+    "price": 26.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0D9PTW2TR.MAIN_360x.jpg?v=1778417563"
+  },
+  {
+    "sku": "100-2500-252-0",
+    "name": "Resveratrol",
+    "price": 34.7,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FV71ZDQ4.MAIN_1800x1800.jpg?v=1778417708"
+  },
+  {
+    "sku": "100-2500-253",
+    "name": "Glycine",
+    "price": 33.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVB4NQMB.MAIN_1800x1800.jpg?v=1778417860"
+  },
+  {
+    "sku": "100-2500-254",
+    "name": "Berberine",
+    "price": 39.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVB57HRV.MAIN_1800x1800.jpg?v=1778418244"
+  },
+  {
+    "sku": "100-2500-255",
+    "name": "Selenium",
+    "price": 26.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVBH1RBM.MAIN_1800x1800.jpg?v=1778418490"
+  },
+  {
+    "sku": "100-2500-256",
+    "name": "Indole-3-carbinol",
+    "price": 28.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVB3WS6Q.MAIN_1800x1800.jpg?v=1778418750"
+  },
+  {
+    "sku": "100-2500-257",
+    "name": "Turkey Tail",
+    "price": 34.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FV9WNDVK.MAIN_1800x1800.jpg?v=1778419170"
+  },
+  {
+    "sku": "100-2500-258",
+    "name": "Choline",
+    "price": 29.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVCHF5DP.MAIN_1800x1800.jpg?v=1778419420"
+  },
+  {
+    "sku": "100-2500-259",
+    "name": "Chasteberry",
+    "price": 27.5,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVD8DDH6.MAIN_1800x1800.jpg?v=1778419622"
+  },
+  {
+    "sku": "100-2500-260",
+    "name": "Coenzyme Q10",
+    "price": 36.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVD2FDY9.MAIN_1800x1800.jpg?v=1778419822"
+  },
+  {
+    "sku": "100-2500-261",
+    "name": "GABA",
+    "price": 33.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVDPJKK3.MAIN_1800x1800.jpg?v=1778420033"
+  },
+  {
+    "sku": "100-2500-262",
+    "name": "Vitamin K2",
+    "price": 26.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVJBN4VB.MAIN_1800x1800.jpg?v=1778420237"
+  },
+  {
+    "sku": "100-2500-263",
+    "name": "NAC",
+    "price": 29.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVJSPGCS.MAIN_1800x1800.jpg?v=1778420439"
+  },
+  {
+    "sku": "100-2500-264",
+    "name": "Glutathione & selenium",
+    "price": 36.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVJX3WWX.MAIN_1800x1800.jpg?v=1778420651"
+  },
+  {
+    "sku": "100-2500-265",
+    "name": "Triphala",
+    "price": 26.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVKBM8YM.MAIN_1800x1800.jpg?v=1778420999"
+  },
+  {
+    "sku": "100-2500-266",
+    "name": "R (+) Alpha lipoic acid",
+    "price": 34.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVMN5KQR.MAIN_1800x1800.jpg?v=1778421284"
+  },
+  {
+    "sku": "100-2500-267",
+    "name": "L-Theanine",
+    "price": 23.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVMSSTN3.MAIN_360x.jpg?v=1778421546"
+  },
+  {
+    "sku": "100-2500-268",
+    "name": "Spirulina",
+    "price": 38.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVMRGWQT.MAIN_1800x1800.jpg?v=1778421724"
+  },
+  {
+    "sku": "100-2500-269",
+    "name": "Beta Alanine",
+    "price": 45.5,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVNN6LDL.MAIN_1800x1800.jpg?v=1778421906"
+  },
+  {
+    "sku": "100-2500-270",
+    "name": "Black Walnut",
+    "price": 34.7,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVNK6P24.MAIN_1800x1800.jpg?v=1778422209"
+  },
+  {
+    "sku": "100-2500-271",
+    "name": "Vitamin B5 Pantothenic Acid",
+    "price": 28.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1Q5CH3.MAIN_1800x1800.jpg?v=1778422448"
+  },
+  {
+    "sku": "100-2500-272",
+    "name": "Vitamin B2 Riboflavin 5'-phosphate",
+    "price": 29.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1R2LQB.MAIN_1800x1800.jpg?v=1778422657"
+  },
+  {
+    "sku": "100-2500-273",
+    "name": "Vitamin B1 Thiamin",
+    "price": 27.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1R79VF.MAIN_1800x1800.jpg?v=1778422812"
+  },
+  {
+    "sku": "100-2500-274",
+    "name": "Cranberry",
+    "price": 35.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1QZ8Z6.MAIN_1800x1800.jpg?v=1778422954"
+  },
+  {
+    "sku": "100-2500-275",
+    "name": "Chlorella",
+    "price": 32.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1SMX8W.MAIN_1800x1800.jpg?v=1778423103"
+  },
+  {
+    "sku": "100-2500-276",
+    "name": "MSM (Methyl Sulfonyl Methane)",
+    "price": 30.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1RQYLC.MAIN_1800x1800.jpg?v=1778423305"
+  },
+  {
+    "sku": "100-2500-277",
+    "name": "Bamboo Silica Extract",
+    "price": 33.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1RWV16.MAIN_1800x1800.jpg?v=1778423470"
+  },
+  {
+    "sku": "100-2500-278",
+    "name": "Garlic",
+    "price": 35.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1SBPND.MAIN_1800x1800.jpg?v=1778423588"
+  },
+  {
+    "sku": "100-2500-279",
+    "name": "Ginger",
+    "price": 28.3,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1SF63W.MAIN_1800x1800.jpg?v=1778423726"
+  },
+  {
+    "sku": "100-2500-280",
+    "name": "Lion's Mane",
+    "price": 33.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1R8WMZ.MAIN_1800x1800.jpg?v=1778423856"
+  },
+  {
+    "sku": "100-2500-281",
+    "name": "Hawthorn Berry",
+    "price": 31.4,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1TMFG2.MAIN_360x.jpg?v=1778423985"
+  },
+  {
+    "sku": "100-2500-282",
+    "name": "Potassium citrate",
+    "price": 27.1,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1RF3HX.MAIN_1800x1800.jpg?v=1778424102"
+  },
+  {
+    "sku": "100-2500-283",
+    "name": "Panax Ginseng",
+    "price": 38.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FT1S723B.MAIN_1800x1800.jpg?v=1778424244"
+  },
+  {
+    "sku": "100-2500-284",
+    "name": "Astaxanthin",
+    "price": 34.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVP7SZK5.MAIN_1800x1800.jpg?v=1778424978"
+  },
+  {
+    "sku": "100-2500-285",
+    "name": "Maritime Pine Bark Extract",
+    "price": 34.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVP3FWM3.MAIN_1800x1800.jpg?v=1778424779"
+  },
+  {
+    "sku": "100-2500-286",
+    "name": "Magnesium Complex",
+    "price": 39.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVP8GRLT.PT0_1800x1800.jpg?v=1778425068"
+  },
+  {
+    "sku": "100-2500-287",
+    "name": "Iron Complex",
+    "price": 28.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVPNGHP4.MAIN_1800x1800.jpg?v=1778425399"
+  },
+  {
+    "sku": "100-2500-288",
+    "name": "Acetyl-L-Carnitine (HCl)",
+    "price": 34.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVPLGH5G.MAIN_1800x1800.jpg?v=1778425608"
+  },
+  {
+    "sku": "100-2500-289",
+    "name": "Mushroom Blend",
+    "price": 34.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0FVQ6LRT2.MAIN_1800x1800.jpg?v=1778425792"
+  },
+  {
+    "sku": "100-2500-290",
+    "name": "Olive leaf extract",
+    "price": 34.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQCHLHPH.MAIN_1800x1800.jpg?v=1778426029"
+  },
+  {
+    "sku": "100-2500-291",
+    "name": "Grape Seed Extract",
+    "price": 31.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQDS67SY.MAIN_1800x1800.jpg?v=1778426228"
+  },
+  {
+    "sku": "100-2500-292",
+    "name": "Citrus Bergamot",
+    "price": 37.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQD9FK2T.MAIN_1800x1800.jpg?v=1778426423"
+  },
+  {
+    "sku": "100-2500-293",
+    "name": "Andrographis",
+    "price": 39.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQDPFKTQ.MAIN_1800x1800.jpg?v=1778426625"
+  },
+  {
+    "sku": "100-2500-294",
+    "name": "Boswellia",
+    "price": 44.6,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQF22SHY.MAIN_1800x1800.jpg?v=1778426787"
+  },
+  {
+    "sku": "100-2500-295",
+    "name": "Astragalus",
+    "price": 29.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQDL7SC8.MAIN_1800x1800.jpg?v=1778426941"
+  },
+  {
+    "sku": "100-2500-296",
+    "name": "Marine collagen",
+    "price": 38.9,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQDXJFWV.MAIN_1800x1800.jpg?v=1778427111"
+  },
+  {
+    "sku": "100-2500-297",
+    "name": "Zinc & Copper",
+    "price": 29.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQDM9VNS.MAIN_1800x1800.jpg?v=1778427279"
+  },
+  {
+    "sku": "100-2500-298",
+    "name": "Iron Bisglycinate",
+    "price": 26.2,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQD33B5M.MAIN_1800x1800.jpg?v=1778427460"
+  },
+  {
+    "sku": "100-2500-299",
+    "name": "Iron + Vitamin C",
+    "price": 34.8,
+    "image": "https://www.biogenique.com/cdn/shop/files/B0GQDSQ1N4.MAIN_1800x1800.jpg?v=1778427601"
+  }
+]

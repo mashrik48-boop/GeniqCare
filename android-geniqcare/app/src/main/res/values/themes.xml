@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.GeniqCare" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00C2D1</item>
+        <item name="colorPrimaryDark">#00A3B0</item>
+        <item name="colorAccent">#00C2D1</item>
+        <item name="android:statusBarColor" tools:targetApi="21">#00A3B0</item>
+    </style>
+</resources>

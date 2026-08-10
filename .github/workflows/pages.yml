@@ -1,4 +1,4 @@
-name: Deploy Biogenique webapp to GitHub Pages
+name: Deploy GeniqCare apps to GitHub Pages
 
 on:
   push:
@@ -25,8 +25,14 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Assemble site
+        run: |
+          mkdir -p site
+          cp landing/index.html site/index.html
+          cp -r webapp site/webapp
+          cp -r geniqcare-app site/geniqcare-app
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 'webapp'
+          path: 'site'
       - id: deployment
         uses: actions/deploy-pages@v4
