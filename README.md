@@ -1,6 +1,6 @@
 # GeniqCare
 
-Four things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
+Five things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
 
 ## 1. `geniqcare-app/` — GeniqCare Health Companion (installable PWA, works right now)
 
@@ -34,6 +34,14 @@ Live at: https://mashrik48-boop.github.io/GeniqCare/webapp/
 
 Loads `https://www.biogenique.com` directly.
 
+## 5. `private-dns-lock/` — DNS Lock (native Android Studio project)
+
+Unrelated to the health app: a self-control tool that locks your own
+phone's **Private DNS** setting using Android's Device Owner API, so you
+can't casually disable a DNS-based content blocker. Requires a one-time ADB
+setup step (see its own README) and Android 12+. Includes a self-timer so
+unlocking is delayed even from yourself.
+
 ---
 
 ## Why there's no `.apk` file in this repo
@@ -41,11 +49,11 @@ Loads `https://www.biogenique.com` directly.
 This build environment's network policy blocks `dl.google.com`, which is the
 only source for the Android SDK platform/build-tools needed to compile an
 APK. There is no local Android SDK installed here, so a real signed `.apk`
-cannot be produced in this sandbox — for either Android project.
+cannot be produced in this sandbox — for any of the Android projects.
 
 To get a real `.apk`:
 ```
-cd android-geniqcare   # or android/
+cd android-geniqcare   # or android/ or private-dns-lock/
 ./gradlew assembleDebug   # run this on a machine/CI with the Android SDK installed
 ```
 Or open the folder in Android Studio and hit **Run** / **Build APK**.

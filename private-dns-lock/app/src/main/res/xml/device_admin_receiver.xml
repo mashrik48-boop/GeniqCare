@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  No password/wipe policies are requested — this admin only ever calls
+  addUserRestriction(DISALLOW_CONFIG_PRIVATE_DNS) and
+  setGlobalPrivateDnsModeProviderHostname(), both of which are available to a
+  device-owner app without declaring extra <uses-policy> entries.
+-->
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+</device-admin>

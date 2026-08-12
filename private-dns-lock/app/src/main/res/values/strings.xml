@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">DNS Lock</string>
+    <string name="app_title">Private DNS Lock</string>
+    <string name="app_subtitle">Lock your own Private DNS setting so you can\'t casually turn it off.</string>
+
+    <string name="status_not_owner">Not set up yet. Follow the steps below once to enable locking.</string>
+    <string name="status_unlocked">Unlocked. Private DNS can be changed normally in Settings.</string>
+    <string name="status_locked">Locked to %1$s. The Private DNS entry in Settings is greyed out.</string>
+
+    <string name="setup_heading">One-time setup</string>
+    <string name="setup_instructions">This app locks Private DNS using Android\'s Device Owner API, which needs to be granted once from a computer via ADB — there is no in-app permission prompt for it. It only works on a profile with no accounts added yet, so do this right after a factory reset (or on a fresh secondary user). Connect the phone with USB debugging enabled and run:</string>
+    <string name="tap_to_copy">Tap the command above to copy it.</string>
+    <string name="adb_copied">Command copied to clipboard</string>
+
+    <string name="hostname_label">Private DNS provider hostname</string>
+    <string name="duration_label">Lock for how many minutes (0 = unlock any time)</string>
+    <string name="lock_button">Lock</string>
+    <string name="unlock_button">Unlock</string>
+    <string name="countdown_ready">Ready to unlock</string>
+    <string name="countdown_format">%1$dm %2$02ds remaining</string>
+
+    <string name="error_hostname_required">Enter a DNS provider hostname</string>
+    <string name="error_duration_invalid">Enter 0 or a positive number of minutes</string>
+    <string name="error_hostname_unreachable">Could not set that host as Private DNS — check the hostname and your connection</string>
+    <string name="locked_confirmation">Private DNS locked</string>
+    <string name="unlocked_confirmation">Private DNS unlocked</string>
+
+    <string name="relinquish_button">Remove device owner (full reset)</string>
+    <string name="relinquish_title">Remove device owner?</string>
+    <string name="relinquish_message">This clears the Private DNS lock permanently and gives up the permission that makes locking possible. You would need to factory reset (or use a fresh user) to set it up again. Only do this if you\'re done using the app.</string>
+    <string name="relinquish_confirm">Remove</string>
+
+    <string name="admin_disabled">Device admin was disabled — locking no longer works until re-provisioned.</string>
+</resources>
