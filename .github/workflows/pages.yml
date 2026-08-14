@@ -2,7 +2,7 @@ name: Deploy GeniqCare apps to GitHub Pages
 
 on:
   push:
-    branches: ["claude/biogenique-apk-download-9obfd9"]
+    branches: ["claude/biogenique-apk-download-9obfd9", "claude/catechism-app-search-commentaries-4ob9na"]
   workflow_dispatch:
 
 permissions:
@@ -31,6 +31,7 @@ jobs:
           cp landing/index.html site/index.html
           cp -r webapp site/webapp
           cp -r geniqcare-app site/geniqcare-app
+          cp -r catechism-app site/catechism-app
       - uses: actions/upload-pages-artifact@v3
         with:
           path: 'site'

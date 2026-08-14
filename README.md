@@ -1,6 +1,6 @@
 # GeniqCare
 
-Four things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
+Five things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
 
 ## 1. `geniqcare-app/` — GeniqCare Health Companion (installable PWA, works right now)
 
@@ -34,6 +34,27 @@ Live at: https://mashrik48-boop.github.io/GeniqCare/webapp/
 
 Loads `https://www.biogenique.com` directly.
 
+## 5. `catechism-app/` — Orthodox Way: Oriental Catechism (installable PWA)
+
+A dark, gold-and-burgundy devotional app for the Oriental Orthodox tradition
+(Coptic, Ethiopian/Eritrean, Syriac, Armenian, Malankara): a systematic
+catechism across six doctrinal pillars (Trinity, Cyrillian Miaphysite
+Christology, the Holy Mysteries, the Theotokos & Saints, Salvation &
+Theosis, Holy Church & Councils) with Scripture references and patristic
+quotations; patristic Bible commentary across John, Matthew, Luke, Romans,
+1 Corinthians, Hebrews, Genesis, and the Psalms, drawing heavily on Fr.
+Tadros Malaty alongside classical Fathers (Cyril of Alexandria, Athanasius,
+Ephrem the Syrian, Severus of Antioch, Gregory the Illuminator); the
+Agpeya/Shehimo canonical hours, the Creed, Trisagion, and an interactive
+41x Kyrie Eleison prayer-rope counter; an apologetics Q&A catalog; a
+tiered multiple-choice quiz engine with score history; a glossary, the
+seven canonical fasts, and the six sister Churches; a personal study
+journal; unified bookmarking across every content type; and offline,
+client-side search across all of it. State persists in `localStorage`; no
+backend required.
+
+Live at: https://mashrik48-boop.github.io/GeniqCare/catechism-app/
+
 ---
 
 ## Why there's no `.apk` file in this repo
@@ -52,5 +73,6 @@ Or open the folder in Android Studio and hit **Run** / **Build APK**.
 
 ## Deployment
 
-`.github/workflows/pages.yml` publishes `landing/`, `webapp/`, and
-`geniqcare-app/` to GitHub Pages on every push to this branch.
+`.github/workflows/pages.yml` publishes `landing/`, `webapp/`,
+`geniqcare-app/`, and `catechism-app/` to GitHub Pages on every push to the
+tracked branches.
