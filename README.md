@@ -1,6 +1,6 @@
 # GeniqCare
 
-Four things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
+Six things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
 
 ## 1. `geniqcare-app/` — GeniqCare Health Companion (installable PWA, works right now)
 
@@ -34,6 +34,40 @@ Live at: https://mashrik48-boop.github.io/GeniqCare/webapp/
 
 Loads `https://www.biogenique.com` directly.
 
+## 5. `catechism-app/` — Orthodox Way: Oriental Catechism (installable PWA)
+
+A dark, gold-and-burgundy devotional app for the Oriental Orthodox tradition
+(Coptic, Ethiopian/Eritrean, Syriac, Armenian, Malankara): a systematic
+catechism across six doctrinal pillars (Trinity, Cyrillian Miaphysite
+Christology, the Holy Mysteries, the Theotokos & Saints, Salvation &
+Theosis, Holy Church & Councils) with Scripture references and patristic
+quotations; patristic Bible commentary across John, Matthew, Luke, Romans,
+1 Corinthians, Hebrews, Genesis, and the Psalms, drawing heavily on Fr.
+Tadros Malaty alongside classical Fathers (Cyril of Alexandria, Athanasius,
+Ephrem the Syrian, Severus of Antioch, Gregory the Illuminator); the
+Agpeya/Shehimo canonical hours, the Creed, Trisagion, and an interactive
+41x Kyrie Eleison prayer-rope counter; an apologetics Q&A catalog; a
+tiered multiple-choice quiz engine with score history; a glossary, the
+seven canonical fasts, and the six sister Churches; a personal study
+journal; unified bookmarking across every content type; and offline,
+client-side search across all of it. It also ships the **complete source
+catechism** (Fr. Tadros Y. Malaty's "Oriental Orthodox Catechism," 19
+books / ~300 chapters covering Holy Tradition, Holy Scriptures, Theology,
+Creation, the Heavenly Hosts, Pneumatology, Ecclesiology, Catholicism vs.
+Orthodoxy, the Holy Sacraments, Mariology, Eschatology, Coptic Liturgy,
+Worship & Prayer, Monasticism, Christian Living, Soteriology, Christology,
+and an excerpt of St. Athanasius's "On the Incarnation") as a searchable,
+bookmarkable Library reader (`data/library.json`). State persists in
+`localStorage`; no backend required.
+
+Live at: https://mashrik48-boop.github.io/GeniqCare/catechism-app/
+
+## 6. `android-catechism/` — native Android Studio project (WebView shell) for the catechism app
+
+A Kotlin app, themed in the app's burgundy-and-gold palette, that loads the
+hosted `catechism-app` PWA above. See the note below on why there's no
+compiled `.apk` in this repo.
+
 ---
 
 ## Why there's no `.apk` file in this repo
@@ -41,16 +75,32 @@ Loads `https://www.biogenique.com` directly.
 This build environment's network policy blocks `dl.google.com`, which is the
 only source for the Android SDK platform/build-tools needed to compile an
 APK. There is no local Android SDK installed here, so a real signed `.apk`
-cannot be produced in this sandbox — for either Android project.
+cannot be produced in this sandbox — for any of the three Android projects.
 
 To get a real `.apk`:
 ```
-cd android-geniqcare   # or android/
+cd android-catechism   # or android-geniqcare, or android
 ./gradlew assembleDebug   # run this on a machine/CI with the Android SDK installed
 ```
-Or open the folder in Android Studio and hit **Run** / **Build APK**.
+Or open the folder in Android Studio and hit **Run** / **Build APK**. (None
+of these projects checks in the Gradle wrapper jar/script, since fetching it
+also requires network access this sandbox doesn't have — Android Studio
+regenerates it automatically on first open, or run `gradle wrapper` yourself
+if you're using the command line.)
+
+**Fastest path with no build at all:** every app in this repo is an
+installable PWA. On an Android phone, open the "Live at" URL above in
+Chrome → menu → **Add to Home screen**. It installs full-screen, works
+offline, and behaves like a native app — no APK required.
 
 ## Deployment
 
-`.github/workflows/pages.yml` publishes `landing/`, `webapp/`, and
-`geniqcare-app/` to GitHub Pages on every push to this branch.
+`.github/workflows/pages.yml` publishes `landing/`, `webapp/`,
+`geniqcare-app/`, and `catechism-app/` to GitHub Pages on every push to the
+tracked branches. **Note:** the `github-pages` environment in this repo's
+Settings may restrict which branches are allowed to actually deploy
+(Settings → Environments → `github-pages` → Deployment branches), separate
+from the `on.push.branches` list in the workflow file. If a run on this
+branch shows as failed with no build/deploy steps executed, that's the
+cause — add the branch there, or merge into a branch that's already
+allowed.
