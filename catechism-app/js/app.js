@@ -20,8 +20,25 @@
     kyrie: store.get('ow_kyrie', 0),
     quizHistory: store.get('ow_quiz_history', []),
     catFilter: 'all',
-    quiz: null
+    quiz: null,
+    library: null,
+    libraryError: false,
+    chapterIndex: null
   };
+
+  function loadLibrary() {
+    fetch('data/library.json')
+      .then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+      .then(sections => {
+        state.library = sections;
+        state.chapterIndex = {};
+        sections.forEach(sec => sec.chapters.forEach(ch => { state.chapterIndex[ch.id] = { section: sec, chapter: ch }; }));
+        indexLibraryForSearch(sections);
+        const { name } = parseRoute();
+        if (name === 'library' || name === 'library-section' || name === 'library-chapter' || name === 'search') render();
+      })
+      .catch(() => { state.libraryError = true; render(); });
+  }
 
   function toggleBookmark(kind, id, title, meta) {
     const key = kind + ':' + id;
@@ -78,7 +95,7 @@
     { id: 'more', label: 'More', icon: '⋯' }
   ];
   function bottomNav(active) {
-    const activeGroup = ['prayers','qa','quiz','notes','journal','bookmarks','search'].includes(active) ? 'more' : active;
+    const activeGroup = ['prayers','qa','quiz','notes','journal','bookmarks','search','library'].includes(active) ? 'more' : active;
     return `<div class="bottom-nav">${NAV_ITEMS.map(n => `
       <button class="nav-btn ${n.id === activeGroup ? 'active' : ''}" data-nav="${n.id}">
         <span class="nav-icon">${n.icon}</span><span>${n.label}</span>
@@ -123,6 +140,11 @@
           <button class="tile" data-nav="notes"><span class="tile-icon">📖</span><span class="tile-label">Notes</span></button>
           <button class="tile" data-nav="journal"><span class="tile-icon">✍</span><span class="tile-label">Journal</span></button>
           <button class="tile" data-nav="bookmarks"><span class="tile-icon">★</span><span class="tile-label">Bookmarks</span></button>
+        </div>
+        <div class="feature-card" style="margin-top:12px;" data-nav="library">
+          <h3>📚 The Full Catechism</h3>
+          <p>The complete Oriental Orthodox Catechism — 19 books and roughly 300 chapters on Tradition, Scripture, Theology, the Trinity, Christology, the Sacraments, Mariology, Eschatology, Liturgy, and Christian living, in full.</p>
+          <div class="learn-more">Open the library →</div>
         </div>
         <div class="section-label" style="margin-top:22px;">Featured Tradition</div>
         <div class="feature-card">
@@ -269,6 +291,81 @@
         </div>`).join('')}
       </div>
       ${bottomNav('traditions')}`;
+  }
+
+  /* ---------------- Library (full catechism document) ---------------- */
+  function librarySkeleton(title) {
+    return `
+      ${topbar(title, { back: true })}
+      <div class="view">
+        ${state.libraryError
+          ? `<div class="empty-state"><span class="glyph">⚠</span>Could not load the full library text. Check your connection and reopen this section.</div>`
+          : `<div class="empty-state"><span class="glyph">☩</span>Loading the complete catechism…</div>`}
+      </div>
+      ${bottomNav('library')}`;
+  }
+
+  function viewLibraryIndex() {
+    if (!state.library) return librarySkeleton('Full Catechism');
+    return `
+      ${topbar('Full Catechism', { showSearch: true })}
+      <div class="view">
+        <p class="subtle" style="margin-bottom:14px;">The complete Oriental Orthodox Catechism — ${state.library.length} books, ${state.library.reduce((n,s)=>n+s.chapters.length,0)} chapters.</p>
+        ${state.library.map((sec, i) => `<div class="list-card" data-nav="library-section" data-id="${i}">
+          <div class="avatar">📚</div>
+          <div class="content"><h3>${esc(sec.title)}</h3><p class="subtle">${sec.chapters.length} chapters</p></div>
+        </div>`).join('')}
+      </div>
+      ${bottomNav('library')}`;
+  }
+
+  function viewLibrarySection(idx) {
+    if (!state.library) return librarySkeleton('Full Catechism');
+    const sec = state.library[parseInt(idx, 10)];
+    if (!sec) return viewLibraryIndex();
+    return `
+      ${topbar(sec.title, { back: true })}
+      <div class="view">
+        ${sec.chapters.map(ch => {
+          const firstHeading = ch.subsections.find(ss => ss.heading);
+          const preview = firstHeading ? firstHeading.heading : (ch.subsections[0].paragraphs[0] || '').slice(0, 80);
+          return `<div class="list-card" data-nav="library-chapter" data-id="${ch.id}">
+            <div class="avatar">📖</div>
+            <div class="content"><h3>${esc(ch.title)}</h3><p>${esc(preview)}</p></div>
+            <button class="bookmark-btn ${isBookmarked('library', ch.id) ? 'active' : ''}" data-bm-quick="library:${ch.id}:${esc(sec.title + ' — ' + ch.title)}">${isBookmarked('library', ch.id) ? '★' : '☆'}</button>
+          </div>`;
+        }).join('')}
+      </div>
+      ${bottomNav('library')}`;
+  }
+
+  function viewLibraryChapter(chapterId) {
+    if (!state.library) return librarySkeleton('Full Catechism');
+    const found = state.chapterIndex[chapterId];
+    if (!found) return viewLibraryIndex();
+    const { section, chapter } = found;
+    const chapters = section.chapters;
+    const ci = chapters.findIndex(c => c.id === chapterId);
+    const bm = isBookmarked('library', chapter.id);
+    return `
+      ${topbar(section.title, { back: true, bookmarkActive: bm })}
+      <div class="view" style="font-size:${state.fontScale}em;">
+        <div class="commentary-nav">
+          <button data-lib-prev="${chapter.id}" ${ci <= 0 ? 'disabled style="opacity:.3"' : ''}>‹</button>
+          <span class="ref-label">${esc(chapter.title)}</span>
+          <button data-lib-next="${chapter.id}" ${ci >= chapters.length - 1 ? 'disabled style="opacity:.3"' : ''}>›</button>
+        </div>
+        <div class="prayer-controls">
+          <span style="flex:1;"></span>
+          <button class="font-btn" data-font="-">A-</button>
+          <button class="font-btn" data-font="+">A+</button>
+        </div>
+        ${chapter.subsections.map(ss => `
+          ${ss.heading ? `<h3 style="color:var(--gold);margin:18px 0 8px;font-size:1.15rem;">${esc(ss.heading)}</h3>` : ''}
+          <div class="detail-body">${ss.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+        `).join('')}
+      </div>
+      ${bottomNav('library')}`;
   }
 
   /* ---------------- Prayers ---------------- */
@@ -443,12 +540,13 @@
       ${bottomNav('bookmarks')}`;
   }
   function kindLabel(kind) {
-    return { catechism: 'Catechism', commentary: 'Commentary', prayer: 'Prayer', qa: 'Q&A' }[kind] || kind;
+    return { catechism: 'Catechism', commentary: 'Commentary', prayer: 'Prayer', qa: 'Q&A', library: 'Full Catechism', note: 'Notes' }[kind] || kind;
   }
 
   /* ---------------- More ---------------- */
   function viewMore() {
     const items = [
+      ['library', '📚', 'Full Catechism Library'],
       ['prayers', '🕊', 'Prayers & Hours'],
       ['qa', '❓', 'Q&A Catalog'],
       ['quiz', '✎', 'Catechism Quiz'],
@@ -478,7 +576,22 @@
     NOTES.forEach(sec => sec.entries.forEach(e => idx.push({ kind: 'note', id: sec.id, title: e.term, snippet: e.def, blob: [e.term, e.def].join(' ').toLowerCase() })));
     return idx;
   }
-  const SEARCH_INDEX = buildSearchIndex();
+  let SEARCH_INDEX = buildSearchIndex();
+
+  function indexLibraryForSearch(sections) {
+    sections.forEach(sec => sec.chapters.forEach(ch => {
+      ch.subsections.forEach(ss => {
+        const text = ss.paragraphs.join(' ');
+        SEARCH_INDEX.push({
+          kind: 'library',
+          id: ch.id,
+          title: (ss.heading ? ss.heading : ch.title) + ' — ' + sec.title,
+          snippet: text.slice(0, 110),
+          blob: [sec.title, ch.title, ss.heading || '', text].join(' ').toLowerCase()
+        });
+      });
+    }));
+  }
 
   function viewSearch(query) {
     query = query || '';
@@ -507,6 +620,7 @@
     else if (kind === 'prayer') go('prayer-detail/' + id);
     else if (kind === 'qa') { qaOpen.add(id); go('qa'); }
     else if (kind === 'note') go('notes');
+    else if (kind === 'library') go('library-chapter/' + id);
   }
 
   /* ---------------- render dispatch ---------------- */
@@ -521,6 +635,9 @@
       case 'commentary': html = viewCommentaryIndex(); break;
       case 'commentary-detail': html = viewCommentaryDetail(param); break;
       case 'traditions': html = viewTraditions(); break;
+      case 'library': html = viewLibraryIndex(); break;
+      case 'library-section': html = viewLibrarySection(param); break;
+      case 'library-chapter': html = viewLibraryChapter(param); break;
       case 'prayers': html = viewPrayersIndex(); break;
       case 'prayer-detail': html = viewPrayerDetail(param); break;
       case 'qa': html = viewQA(); break;
@@ -545,7 +662,7 @@
       el.addEventListener('click', () => {
         const target = el.getAttribute('data-nav');
         const id = el.getAttribute('data-id');
-        if (target === 'catechism-detail' || target === 'commentary-detail' || target === 'prayer-detail') {
+        if (target === 'catechism-detail' || target === 'commentary-detail' || target === 'prayer-detail' || target === 'library-section' || target === 'library-chapter') {
           go(target + '/' + id);
         } else go(target);
       });
@@ -572,6 +689,10 @@
         if (routeName === 'catechism-detail') { const c = CATECHISM.find(x => x.id === routeParam); kind='catechism'; id=c.id; title=c.title; }
         else if (routeName === 'commentary-detail') { const c = COMMENTARIES.find(x => String(x.order) === String(routeParam)); kind='commentary'; id=c.order; title=c.ref; }
         else if (routeName === 'prayer-detail') { const p = PRAYERS.find(x => x.id === routeParam); kind='prayer'; id=p.id; title=p.title; }
+        else if (routeName === 'library-chapter' && state.chapterIndex) {
+          const found = state.chapterIndex[routeParam];
+          if (found) { kind='library'; id=found.chapter.id; title=found.section.title + ' — ' + found.chapter.title; }
+        }
         if (kind) { const added = toggleBookmark(kind, id, title); toast(added ? 'Bookmarked' : 'Removed from bookmarks'); render(); }
       });
     }
@@ -592,6 +713,22 @@
     if (nextBtn) nextBtn.addEventListener('click', () => {
       const idx = COMMENTARIES.findIndex(c => String(c.order) === nextBtn.getAttribute('data-commentary-next'));
       if (idx < COMMENTARIES.length - 1) go('commentary-detail/' + COMMENTARIES[idx + 1].order);
+    });
+
+    // library chapter prev/next
+    const libPrevBtn = app.querySelector('[data-lib-prev]');
+    const libNextBtn = app.querySelector('[data-lib-next]');
+    if (libPrevBtn) libPrevBtn.addEventListener('click', () => {
+      const found = state.chapterIndex[libPrevBtn.getAttribute('data-lib-prev')];
+      if (!found) return;
+      const idx = found.section.chapters.findIndex(c => c.id === found.chapter.id);
+      if (idx > 0) go('library-chapter/' + found.section.chapters[idx - 1].id);
+    });
+    if (libNextBtn) libNextBtn.addEventListener('click', () => {
+      const found = state.chapterIndex[libNextBtn.getAttribute('data-lib-next')];
+      if (!found) return;
+      const idx = found.section.chapters.findIndex(c => c.id === found.chapter.id);
+      if (idx < found.section.chapters.length - 1) go('library-chapter/' + found.section.chapters[idx + 1].id);
     });
 
     // prayers: font size
@@ -699,4 +836,5 @@
   }
 
   render();
+  loadLibrary();
 })();

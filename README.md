@@ -50,8 +50,15 @@ Agpeya/Shehimo canonical hours, the Creed, Trisagion, and an interactive
 tiered multiple-choice quiz engine with score history; a glossary, the
 seven canonical fasts, and the six sister Churches; a personal study
 journal; unified bookmarking across every content type; and offline,
-client-side search across all of it. State persists in `localStorage`; no
-backend required.
+client-side search across all of it. It also ships the **complete source
+catechism** (Fr. Tadros Y. Malaty's "Oriental Orthodox Catechism," 19
+books / ~300 chapters covering Holy Tradition, Holy Scriptures, Theology,
+Creation, the Heavenly Hosts, Pneumatology, Ecclesiology, Catholicism vs.
+Orthodoxy, the Holy Sacraments, Mariology, Eschatology, Coptic Liturgy,
+Worship & Prayer, Monasticism, Christian Living, Soteriology, Christology,
+and an excerpt of St. Athanasius's "On the Incarnation") as a searchable,
+bookmarkable Library reader (`data/library.json`). State persists in
+`localStorage`; no backend required.
 
 Live at: https://mashrik48-boop.github.io/GeniqCare/catechism-app/
 

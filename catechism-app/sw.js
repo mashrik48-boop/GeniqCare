@@ -1,8 +1,9 @@
-const CACHE = 'orthodox-way-v1';
+const CACHE = 'orthodox-way-v2';
 const SHELL = [
   './', 'index.html', 'manifest.json',
   'css/styles.css',
   'js/data.js', 'js/app.js',
+  'data/library.json',
   'icons/icon-192.png', 'icons/icon-512.png'
 ];
 
