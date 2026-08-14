@@ -1,6 +1,6 @@
 # GeniqCare
 
-Five things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
+Six things live in this repo. Live site: **https://mashrik48-boop.github.io/GeniqCare/**
 
 ## 1. `geniqcare-app/` — GeniqCare Health Companion (installable PWA, works right now)
 
@@ -62,6 +62,12 @@ bookmarkable Library reader (`data/library.json`). State persists in
 
 Live at: https://mashrik48-boop.github.io/GeniqCare/catechism-app/
 
+## 6. `android-catechism/` — native Android Studio project (WebView shell) for the catechism app
+
+A Kotlin app, themed in the app's burgundy-and-gold palette, that loads the
+hosted `catechism-app` PWA above. See the note below on why there's no
+compiled `.apk` in this repo.
+
 ---
 
 ## Why there's no `.apk` file in this repo
@@ -69,17 +75,32 @@ Live at: https://mashrik48-boop.github.io/GeniqCare/catechism-app/
 This build environment's network policy blocks `dl.google.com`, which is the
 only source for the Android SDK platform/build-tools needed to compile an
 APK. There is no local Android SDK installed here, so a real signed `.apk`
-cannot be produced in this sandbox — for either Android project.
+cannot be produced in this sandbox — for any of the three Android projects.
 
 To get a real `.apk`:
 ```
-cd android-geniqcare   # or android/
+cd android-catechism   # or android-geniqcare, or android
 ./gradlew assembleDebug   # run this on a machine/CI with the Android SDK installed
 ```
-Or open the folder in Android Studio and hit **Run** / **Build APK**.
+Or open the folder in Android Studio and hit **Run** / **Build APK**. (None
+of these projects checks in the Gradle wrapper jar/script, since fetching it
+also requires network access this sandbox doesn't have — Android Studio
+regenerates it automatically on first open, or run `gradle wrapper` yourself
+if you're using the command line.)
+
+**Fastest path with no build at all:** every app in this repo is an
+installable PWA. On an Android phone, open the "Live at" URL above in
+Chrome → menu → **Add to Home screen**. It installs full-screen, works
+offline, and behaves like a native app — no APK required.
 
 ## Deployment
 
 `.github/workflows/pages.yml` publishes `landing/`, `webapp/`,
 `geniqcare-app/`, and `catechism-app/` to GitHub Pages on every push to the
-tracked branches.
+tracked branches. **Note:** the `github-pages` environment in this repo's
+Settings may restrict which branches are allowed to actually deploy
+(Settings → Environments → `github-pages` → Deployment branches), separate
+from the `on.push.branches` list in the workflow file. If a run on this
+branch shows as failed with no build/deploy steps executed, that's the
+cause — add the branch there, or merge into a branch that's already
+allowed.

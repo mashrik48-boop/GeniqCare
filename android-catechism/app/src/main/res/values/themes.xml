@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.OrthodoxWay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#6E1423</item>
+        <item name="colorPrimaryDark">#4A0E18</item>
+        <item name="colorAccent">#D4AF37</item>
+        <item name="android:statusBarColor" tools:targetApi="21">#4A0E18</item>
+        <item name="android:windowBackground">#17120F</item>
+    </style>
+</resources>
